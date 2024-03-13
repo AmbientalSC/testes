@@ -44,7 +44,7 @@
         <script src="data/Mesclado_1.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:20, minZoom:9
+            zoomControl:false, maxZoom:20, minZoom:9
         }).fitBounds([[-27.020060565861748,-48.73713982555838],[-26.904627747245065,-48.58698481510179]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/AlyssonKrombauer/localizador_ru" target="_blank">Alysson Krombauer</a> &middot; <a href="https://ambiental.sc/" title="Ambiental.sc">Ambiental.sc</a> &middot;');
@@ -5348,6 +5348,7 @@
         });
         bounds_group.addLayer(layer_Mesclado_1);
         map.addLayer(layer_Mesclado_1);
+
         var googleGeocoder = new L.Control.Geocoder({
             geocoder: L.Control.Geocoder.google('AIzaSyCiKpZmnL9TQXOJd9Qbzw2agE9kxnTGZ38', {}),
             collapsed: false,
@@ -5355,6 +5356,7 @@
             text: 'Search',
             title: 'Testing'
         }).addTo(map);
+
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
@@ -5476,12 +5478,12 @@
             div_OPERACAO.className= "filterselect";
             document.getElementById("menu").appendChild(div_OPERACAO);
             sel_OPERACAO = document.createElement('select');
-            sel_OPERACAO.multiple = true;
+            sel_OPERACAO.multiple = false;
             sel_OPERACAO.size = 2;
             sel_OPERACAO.id = "sel_OPERACAO";
-            var OPERACAO_options_str = "<option value='Domiciliar' unselected>Domiciliar</option>";
+            var OPERACAO_options_str = "<option value='Seletiva'>Domiciliar</option>";
             sel_OPERACAO.onchange = function(){filterFunc()};
-            OPERACAO_options_str  += '<option value="Seletiva">Seletiva</option>';
+            OPERACAO_options_str  += '<option value="Domiciliar">Seletiva</option>';
             sel_OPERACAO.innerHTML = OPERACAO_options_str;
             div_OPERACAO.appendChild(sel_OPERACAO);
             var lab_OPERACAO = document.createElement('div');
