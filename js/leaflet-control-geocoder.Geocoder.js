@@ -247,7 +247,7 @@ module.exports = {
 			    select = function select(dir) {
 					if (_this._selection) {
 						L.DomUtil.removeClass(_this._selection, 'leaflet-control-geocoder-selected');
-						_this._selection = _this._selection[dir > 0 ? 'nextSibling' : 'previousSibling'];
+						// _this._selection = _this._selection[dir > 0 ? 'nextSibling' : 'previousSibling'];
 					}
 					if (!_this._selection) {
 						_this._selection = _this._alts[dir > 0 ? 'firstChild' : 'lastChild'];
