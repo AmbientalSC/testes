@@ -5471,87 +5471,35 @@
           }
           })
         }
-            // document.getElementById("menu").appendChild(
-            //     document.createElement("div"));
-            // var div_OPERACAO = document.createElement('div');
-            // div_OPERACAO.id = "div_OPERACAO";
-            // div_OPERACAO.className= "filterselect";
-            // document.getElementById("menu").appendChild(div_OPERACAO);
-            // sel_OPERACAO = document.createElement('select');
-            // sel_OPERACAO.multiple = false;
-            // sel_OPERACAO.size = 2;
-            // sel_OPERACAO.id = "sel_OPERACAO";
-            // var OPERACAO_options_str = "<option value='Domiciliar'>Domiciliar</option>";
-            // sel_OPERACAO.onchange = function(){filterFunc()};
-            // OPERACAO_options_str  += '<option value="Seletiva">Seletiva</option>';
-            // sel_OPERACAO.innerHTML = OPERACAO_options_str;
-            // div_OPERACAO.appendChild(sel_OPERACAO);
-            // var lab_OPERACAO = document.createElement('div');
-            // lab_OPERACAO.className = 'filterlabel';
-            // div_OPERACAO.appendChild(lab_OPERACAO);
-            // var reset_OPERACAO = document.createElement('div');
-            // reset_OPERACAO.innerHTML = 'Limpar Filtro';
-            // reset_OPERACAO.className = 'filterlabel';
-            // reset_OPERACAO.onclick = function() {
-            //     var options = document.getElementById("sel_OPERACAO").options;
-            //     for (var i=0; i < options.length; i++) {
-            //         options[i].selected = false;
-            //     }
-            //     filterFunc();
-            // };
-            // div_OPERACAO.appendChild(reset_OPERACAO);
-
             document.getElementById("menu").appendChild(
-            document.createElement("div")
-            );
-
+                document.createElement("div"));
             var div_OPERACAO = document.createElement('div');
             div_OPERACAO.id = "div_OPERACAO";
-            div_OPERACAO.className = "filterselect";
+            div_OPERACAO.className= "filterselect";
             document.getElementById("menu").appendChild(div_OPERACAO);
-
-            var sel_OPERACAO = document.createElement('select');
+            sel_OPERACAO = document.createElement('select');
             sel_OPERACAO.multiple = false;
             sel_OPERACAO.size = 2;
             sel_OPERACAO.id = "sel_OPERACAO";
             var OPERACAO_options_str = "<option value='Domiciliar'>Domiciliar</option>";
-            OPERACAO_options_str += '<option value="Seletiva">Seletiva</option>';
+            sel_OPERACAO.onchange = function(){filterFunc()};
+            OPERACAO_options_str  += '<option value="Seletiva">Seletiva</option>';
             sel_OPERACAO.innerHTML = OPERACAO_options_str;
             div_OPERACAO.appendChild(sel_OPERACAO);
-
-            // Função para acionar o filtro quando a seleção for alterada
-            sel_OPERACAO.onchange = function() {
-                filterFunc();
-            };
-
-            // Botão de envio para aplicar o filtro
-            var submitButton = document.createElement('button');
-            submitButton.type = 'submit';
-            submitButton.innerHTML = 'Aplicar Filtro';
-            submitButton.className = 'filterlabel';
-            submitButton.onclick = function(event) {
-                event.preventDefault(); // Impede o envio padrão do formulário
-                filterFunc(); // Chama a função de filtro
-            };
-            div_OPERACAO.appendChild(submitButton);
-
-            // Função para limpar o filtro e redefinir a seleção
-            function resetFilter() {
+            var lab_OPERACAO = document.createElement('div');
+            lab_OPERACAO.className = 'filterlabel';
+            div_OPERACAO.appendChild(lab_OPERACAO);
+            var reset_OPERACAO = document.createElement('div');
+            reset_OPERACAO.innerHTML = 'Limpar Filtro';
+            reset_OPERACAO.className = 'filterlabel';
+            reset_OPERACAO.onclick = function() {
                 var options = document.getElementById("sel_OPERACAO").options;
-                for (var i = 0; i < options.length; i++) {
+                for (var i=0; i < options.length; i++) {
                     options[i].selected = false;
                 }
                 filterFunc();
-            }
-
-            // Botão de limpar filtro
-            var resetButton = document.createElement('button');
-            resetButton.type = 'button'; // Define o tipo como 'button' para evitar envio do formulário
-            // resetButton.innerHTML = 'Limpar Filtro';
-            resetButton.className = 'filterlabel';
-            resetButton.onclick = resetFilter;
-            div_OPERACAO.appendChild(resetButton);
-
+            };
+            div_OPERACAO.appendChild(reset_OPERACAO);
         </script>
     </body>
 </html>
