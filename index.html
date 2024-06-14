@@ -6362,7 +6362,7 @@
         var googleGeocoder = new L.Control.Geocoder({
             geocoder: L.Control.Geocoder.google('AIzaSyCiKpZmnL9TQXOJd9Qbzw2agE9kxnTGZ38', {}),
             collapsed: false,
-            position: 'topright',
+            position: 'topleft',
             text: 'Search',
             title: 'Testing'
         }).addTo(map);
@@ -6512,7 +6512,7 @@
             sel_OPERACAO.multiple = true;
             sel_OPERACAO.size = 3;
             sel_OPERACAO.id = "sel_OPERACAO";
-            var OPERACAO_options_str = "<option value='DOMICILIAR' unselected>Domiciliar</option>";
+            var OPERACAO_options_str = "<option value='DOMICILIAR' selected>Domiciliar</option>";
             sel_OPERACAO.onchange = function(){filterFunc()};
             OPERACAO_options_str  += '<option value="SELETIVA">Seletiva</option>';
             OPERACAO_options_str  += '<option value="VOLUMOSOS">Volumosos BC</option>';
