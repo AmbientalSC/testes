@@ -8,9 +8,9 @@ module.exports = {
 		options: {
 			showResultIcons: false,
 			collapsed: true,
-			expand: 'touch', // options: touch, click, anythingelse
+			expand: 'click', // options: touch, click, anythingelse
 			position: 'topright',
-			placeholder: 'Search...',
+			placeholder: 'Pesquise RUA/CEP + N° + Cidade',
 			errorMessage: 'Nothing found.',
 			suggestMinLength: 3,
 			suggestTimeout: 250,
@@ -158,7 +158,8 @@ module.exports = {
 			}
 
 			this.fire('start' + mode, eventData);
-			this.options.geocoder[mode](this._input.value, function(results) {
+			this.options.geocoder[mode](this._input.value, 
+				function(results) {
 				if (requestCount === this._requestCount) {
 					eventData.results = results;
 					this.fire('finish' + mode, eventData);
